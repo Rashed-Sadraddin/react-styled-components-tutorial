@@ -1,24 +1,28 @@
 import './App.css';
+import Header from './components/Header'
 
-import UsersFinder from './components/UserFinder';
-import {useState} from 'react'
+import {Routes, Route} from 'react-router-dom'
+
+import Home from './pages/Home/Home'
+import Contacts from './pages/Contact/Contacts'
 
 function App() {
-
-  const [ a, b] = useState(false)
-
-  function buttonClickHandler(){
-    b(prev => !prev)
-  }
   return (
     <>
-    <button onClick={buttonClickHandler}>toggler</button>
-    {
-      a ? <UsersFinder/> :null
-    }
+    
+    <Header></Header>
+
+    <Routes>
+
+      <Route path='/' element={<Home/>} />
+      <Route path='contact/*' element={<Contacts/>} >
+        {/* <Route path=':contactOP' element={<Contact/>} /> */}
+      </Route>
+
+    </Routes>
     
     </>
-    
+
   );
 }
 
