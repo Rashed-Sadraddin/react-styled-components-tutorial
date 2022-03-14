@@ -1,5 +1,5 @@
 {
-    "name": "react-routing-tutorial",
+    "name": "react-redux-toolkit-todo",
     "version": "0.1.0",
     "private": true,
     "dependencies": {
