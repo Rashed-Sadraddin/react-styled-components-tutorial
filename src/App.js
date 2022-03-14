@@ -1,43 +1,25 @@
-import {  useSelector, useDispatch } from 'react-redux'
 import './App.css';
 
+import UsersFinder from './components/UserFinder';
+import {useState} from 'react'
+
 function App() {
-  const counter = useSelector(state => state.counter)
-  const isHidden = useSelector(state => state.isHidden)
 
-  const dispatch = useDispatch()
+  const [ a, b] = useState(false)
 
-  const increseBy=()=>{
-    dispatch({type:'increseby', amount:10})
+  function buttonClickHandler(){
+    b(prev => !prev)
   }
-  const increment=()=>{
-    dispatch({type:'inc'})
-  }
-  const decrement=()=>{
-    dispatch({type:'dec'})
-  }
-
-  const toggle =()=>{
-    dispatch({type:'toggleVisibility'})
-  }
-
-
   return (
-    <div className="App">
-      <button onClick={toggle}>toggle visibility</button>
-      {
-        isHidden ? null : (<div>
-          <h1>{counter}</h1>
-          <button onClick={increment}>increment</button>
-          <button onClick={increseBy}>increse by 10</button>
-          <button onClick={decrement}>decrement</button>
-  
-        </div>)
-      }
-      
-    </div>
+    <>
+    <button onClick={buttonClickHandler}>toggler</button>
+    {
+      a ? <UsersFinder/> :null
+    }
+    
+    </>
+    
   );
-
 }
 
 export default App;
