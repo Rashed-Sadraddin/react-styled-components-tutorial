@@ -1,27 +1,24 @@
 import {  useSelector, useDispatch } from 'react-redux'
 import './App.css';
 
-import { counterActions } from './store/counter-slice'
-import { visibilityActions } from './store/visibility-slice'
-
 function App() {
-  const counter = useSelector(state => state.counter.counter)
-  const isHidden = useSelector(state => state.visibility.isHidden)
+  const counter = useSelector(state => state.counter)
+  const isHidden = useSelector(state => state.isHidden)
 
   const dispatch = useDispatch()
 
   const increseBy=()=>{
-    dispatch(counterActions.increseby(10))
+    dispatch({type:'increseby', amount:10})
   }
   const increment=()=>{
-    dispatch(counterActions.inc())
+    dispatch({type:'inc'})
   }
   const decrement=()=>{
-    dispatch(counterActions.dec())
+    dispatch({type:'dec'})
   }
 
   const toggle =()=>{
-    dispatch(visibilityActions.toggleVisibility())
+    dispatch({type:'toggleVisibility'})
   }
 
 
