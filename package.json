@@ -1,5 +1,5 @@
 {
-    "name": "react-redux-toolkit-todo",
+    "name": "react-redux-toolkit-firebase-localStorage-todo",
     "version": "0.1.0",
     "private": true,
     "dependencies": {
